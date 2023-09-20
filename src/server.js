@@ -11,6 +11,23 @@ const server = http.createServer(async (request, response) => {
         response.end(JSON.stringify(todos))
         return;
     }
+    if (request.url.match(/\/api\/todos\/([0-9]+)/) && request.method ===
+        'GET') {
+        const id = request.url.split('/')[3]
+        const todo = todos.find(t => t.id === parseInt(id))
+        if (!todo) {
+            response.writeHead(404, {
+                'content-type': 'application/json'
+            })
+            response.end('No todo with the specified id is available')
+            return;
+        }
+        response.writeHead(200, {
+            'content-type': 'application/json'
+        })
+        response.end(JSON.stringify(todo))
+        return;
+    }
     if (request.url === "/api/todos" && request.method === "POST") {
         const body = await getRequestData(request)
         const task = JSON.parse(body)

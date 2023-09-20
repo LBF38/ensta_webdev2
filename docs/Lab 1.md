@@ -22,3 +22,12 @@ A. See results above.
 B. The tasks created and modified appear when we make a `GET` request to the server.
 
 ![All tasks modified and created](image-6.png)
+
+# Activity 2
+
+The JS part for implementing the `GET` endpoint for one todo is :
+
+![Implementing the GET endpoint for one todo](image-7.png)
+
+The request to get one todo is :
+![GET request for one todo](image-8.png)
