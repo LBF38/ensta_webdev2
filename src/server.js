@@ -42,6 +42,25 @@ const server = http.createServer(async (request, response) => {
         response.end(JSON.stringify(updatedTask));
         return;
     }
+    if (request.url.match(/\/api\/todos\/([0-9]+)/) && request.method ===
+        'DELETE') {
+        const id = request.url.split("/")[3]
+        const todo = todos.find(t => t.id === parseInt(id))
+        if (!todo) {
+            response.writeHead(404, {
+                'content-type': 'application/json'
+            })
+            response.end('No todo with the specified id is available')
+            return;
+        }
+        const index = todos.indexOf(todo)
+        todos.splice(index, 1)
+        response.writeHead(200, {
+            'content-type': 'application/json'
+        })
+        response.end('Delete the specified todo')
+        return;
+    }
 })
 
 server.listen(PORT, () => {
