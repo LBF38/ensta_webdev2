@@ -31,3 +31,14 @@ The JS part for implementing the `GET` endpoint for one todo is :
 
 The request to get one todo is :
 ![GET request for one todo](image-8.png)
+
+# Activity 3
+
+Change PORT in the terminal and rerun the server :
+![PORT env var + relaunch server](image-9.png)
+
+Verify that the server is not running on PORT 5000 anymore :
+![check not running on port 5000](image-10.png)
+
+Verify that the server is running on new PORT 3000 :
+![check new port 3000](image-11.png)
