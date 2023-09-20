@@ -9,7 +9,9 @@ const server = http.createServer(async (request, response) => {
             'content-type': 'application/json'
         })
         response.end(JSON.stringify(todos))
-    } else if (request.url === "/api/todos" && request.method === "POST") {
+        return;
+    }
+    if (request.url === "/api/todos" && request.method === "POST") {
         const body = await getRequestData(request)
         const task = JSON.parse(body)
         todos.push(task)
@@ -17,6 +19,27 @@ const server = http.createServer(async (request, response) => {
             "Content-Type": "application/json"
         })
         response.end(JSON.stringify(task))
+        return;
+    }
+    if (request.url.match(/\/api\/todos\/([0-9]+)/) && request.method ===
+        'PUT') {
+        const id = request.url.split('/')[3];
+        const todo = todos.find((t) => t.id === parseInt(id));
+        if (!todo) {
+            response.writeHead(404, {
+                'content-type': 'application/json'
+            });
+            response.end('No todo with the specified id is available');
+            return;
+        }
+        let req_body = await getRequestData(request);
+        let updatedTask = JSON.parse(req_body);
+        const index = todos.indexOf(todo);
+        todos[index] = updatedTask;
+        response.writeHead(200, {
+            'content-type': 'application/json'
+        });
+        response.end(JSON.stringify(updatedTask));
         return;
     }
 })
