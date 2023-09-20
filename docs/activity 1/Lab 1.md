@@ -42,3 +42,7 @@ Verify that the server is not running on PORT 5000 anymore :
 
 Verify that the server is running on new PORT 3000 :
 ![check new port 3000](image-11.png)
+
+# Activity 4
+
+For the pet server implementation, see the files in the [pet-server](../../pet_app/) folder.
