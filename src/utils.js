@@ -13,3 +13,4 @@ getRequestData = (request) => {
         }
     })
 }
+module.exports = getRequestData

@@ -16,7 +16,7 @@ const server = http.createServer(async (request, response) => {
         response.writeHead(201, {
             "Content-Type": "application/json"
         })
-        response.end(JSON.stringify(todos))
+        response.end(JSON.stringify(task))
         return;
     }
 })
