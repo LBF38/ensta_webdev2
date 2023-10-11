@@ -39,3 +39,15 @@
 - GET /things/:id([0-9]{5}) route is before the GET /things/:id and display the given id.
 
 ![GET /things/:id([0-9]){5}](image-8.png)
+
+### Middleware
+
+- GET the things routes while adding middlewares. We can see that the middlewares are called before the route.
+
+![GET /things routes w/ middleware](image-9.png)
+
+- GET / display the message from the middleware response.
+
+![GET / - display middleware response](image-10.png)
+
+The logging middleware is called in every request.
