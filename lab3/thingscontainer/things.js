@@ -8,6 +8,7 @@ router.get('/', function (req, res) {
     res.json(thingsList);
 });
 router.post('/', function (req, res) {
-    res.send('POST route on things.');
+    thingsList.push(req.body);
+    res.json(thingsList);
 });
 module.exports = router;
