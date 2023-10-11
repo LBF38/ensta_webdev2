@@ -29,3 +29,13 @@
 ![GET /things/:id](image-5.png)
 => use the thing element in the response
 ![GET /things/:id - use the thing element](image-6.png)
+
+### Pattern Match Routes
+
+- GET /things/* route will display an error message.
+
+![GET /things/* - example w/ /things/param/others](image-7.png)
+
+- GET /things/:id([0-9]{5}) route is before the GET /things/:id and display the given id.
+
+![GET /things/:id([0-9]){5}](image-8.png)
