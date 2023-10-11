@@ -4,3 +4,7 @@
 
 - Create the simple ExpressJS server app with "Hello World" message
 ![Simple app - Hello World](image.png)
+
+- Add random quotes to the app
+
+![random quotes](image-1.png)
