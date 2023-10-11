@@ -1,7 +1,20 @@
 var express = require('express');
+var session = require('express-session');
 var app = express();
 app.use(express.json());
 var things = require('./things.js');
+
+app.use(session({ secret: "Shh, it's a secret!", }));
+app.get('/', function (req, res) {
+    if (req.session.page_views) {
+        req.session.page_views++;
+        res.send('You have visited this page ' + req.session.page_views
+            + ' times');
+    } else {
+        req.session.page_views = 1;
+        res.send("Welcome to this page for the first time!");
+    }
+});
 
 // First middleware before response is sent
 app.use(function (req, res, next) {
