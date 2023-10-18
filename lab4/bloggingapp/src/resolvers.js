@@ -13,5 +13,15 @@ export const resolvers = {
     Person: {
         posts: (parent) => db.posts.filter((post) => post.author_id ===
             parent.id)
+    },
+    Mutation: {
+        addPerson: (_, args) => {
+            const newPerson = {
+                ...args.person, id:
+                    (parseInt(db.people[db.people.length - 1].id) + 1).toString()
+            };
+            db.people.push(newPerson);
+            return newPerson;
+        }
     }
 };

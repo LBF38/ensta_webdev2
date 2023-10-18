@@ -17,4 +17,11 @@ type Query {
     post(id: ID!): Post
     person(id: ID!): Person
 }
+type Mutation {
+    addPerson(person: AddPersonInput!): Person
+}
+input AddPersonInput {
+    name: String!
+    age: Int!
+}
 `
