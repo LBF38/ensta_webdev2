@@ -22,6 +22,21 @@ export const resolvers = {
             };
             db.people.push(newPerson);
             return newPerson;
+        },
+        updatePerson: (_, args) => {
+            db.people = db.people.map((person) => {
+                if (person.id === args.id)
+                    return { ...person, ...args.modifiedPerson };
+                else return person;
+            });
+            return db.people.find((person) => person.id === args.id);
+        },
+        deletePerson: (_, args) => {
+            db.people = db.people.filter((person) => person.id !==
+                args.id);
+            db.posts = db.posts.filter((post) => post.author_id !==
+                args.id);
+            return db.people;
         }
     }
 };

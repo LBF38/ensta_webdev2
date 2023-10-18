@@ -19,9 +19,15 @@ type Query {
 }
 type Mutation {
     addPerson(person: AddPersonInput!): Person
+    updatePerson(id: ID!, modifiedPerson: UpdatePersonInput!): Person
+    deletePerson(id: ID!): [Person]
 }
 input AddPersonInput {
     name: String!
     age: Int!
+}
+input UpdatePersonInput {
+    name: String
+    age: Int
 }
 `
