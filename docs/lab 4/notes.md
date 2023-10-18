@@ -46,3 +46,23 @@ Add the possibility to get a post from id:
 ![check deletion](image-10.png)
 
 The response of the delete mutation is the persons not deleted. And it correctly matches the check we made on the next query.
+
+- Add mutation to add post
+
+![add post mutation](image-11.png)
+
+- Modify post mutation
+
+=> current posts
+![current posts](image-12.png)
+
+=> let's modify the first post title
+![modify post title](image-13.png)
+
+=> let's modify the author of the first post
+![modify author of first post](image-14.png)
+
+- Delete post mutation
+
+=> let's delete the first post
+![delete first post](image-15.png)
