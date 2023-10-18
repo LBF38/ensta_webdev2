@@ -9,6 +9,11 @@ const people = [
         name: 'Jane Eyre',
         age: 25
     },
+    {
+        id: "666",
+        name: "LBF38",
+        age: 22
+    }
 ];
 const posts = [
     {
