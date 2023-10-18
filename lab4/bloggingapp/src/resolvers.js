@@ -50,6 +50,7 @@ export const resolvers = {
                     (parseInt(db.posts[db.posts.length - 1].id) + 1).toString()
             };
             db.posts.push(newPost);
+            pubsub.publish('POST_ADDED', { postAdded: newPost });
             return newPost;
         },
         modifyPost: (_, args) => {
@@ -63,7 +64,9 @@ export const resolvers = {
                     } else {
                         delete modifiedPost.authorId;
                     }
-                    return { ...post, ...modifiedPost };
+                    const finalPost = { ...post, ...modifiedPost };
+                    pubsub.publish('POST_MODIFIED', { postModified: finalPost });
+                    return finalPost;
                 }
                 else return post;
             });
@@ -79,5 +82,11 @@ export const resolvers = {
         personAdded: {
             subscribe: () => pubsub.asyncIterator(['PERSON_ADDED']),
         },
+        postAdded: {
+            subscribe: () => pubsub.asyncIterator(['POST_ADDED']),
+        },
+        postModified: {
+            subscribe: () => pubsub.asyncIterator(['POST_MODIFIED']),
+        }
     }
 };

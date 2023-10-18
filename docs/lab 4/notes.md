@@ -76,3 +76,11 @@ The response of the delete mutation is the persons not deleted. And it correctly
 
 => add a new person on the other tab is still shown on the subscription
 ![add new person from other tab - subscription result](image-18.png)
+
+- Subscriptions - Posts
+
+=> add a new post sub
+![new post sub](image-20.png)
+![add new post sub](image-19.png)
+=> modify post sub
+![modified post sub](image-21.png)
