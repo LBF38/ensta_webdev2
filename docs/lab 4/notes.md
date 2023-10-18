@@ -14,3 +14,11 @@ Add the possibility to get a post from id:
 - Add `person` query to get a person from `id`:
 
 ![person query var](image-2.png)
+
+- `PostsFromAllAuthors`
+
+![PostsFromAllAuthors](image-3.png)
+
+- `PostTitleAuthorName`
+
+![PostTitleAuthorName](image-4.png)
