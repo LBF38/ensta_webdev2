@@ -56,14 +56,15 @@ export const resolvers = {
             console.log(args);
             db.posts = db.posts.map((post) => {
                 // ignore author_id if not in db.people
-                let modifiedPost = args.modifiedPost;
-                if (db.people.find((people) => people.id === modifiedPost.authorId) !== undefined) {
-                    modifiedPost = { ...modifiedPost, author_id: modifiedPost.authorId };
-                } else {
-                    delete modifiedPost.authorId;
-                }
-                if (post.id === args.id)
+                if (post.id === args.id) {
+                    let modifiedPost = args.modifiedPost;
+                    if (db.people.find((people) => people.id === modifiedPost.authorId) !== undefined) {
+                        modifiedPost = { ...modifiedPost, author_id: modifiedPost.authorId };
+                    } else {
+                        delete modifiedPost.authorId;
+                    }
                     return { ...post, ...modifiedPost };
+                }
                 else return post;
             });
             return db.posts.find((post) => post.id === args.id);
