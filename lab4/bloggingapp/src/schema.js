@@ -13,5 +13,6 @@ type Query {
     people: [Person]
     posts: [Post]
     post(id: ID!): Post
+    person(id: ID!): Person
 }
 `

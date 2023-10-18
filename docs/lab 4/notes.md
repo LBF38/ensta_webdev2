@@ -10,3 +10,7 @@ We create a simple GraphQL API using @apollo/server library.
 Add the possibility to get a post from id:
 
 ![query var](image-1.png)
+
+- Add `person` query to get a person from `id`:
+
+![person query var](image-2.png)
