@@ -41,4 +41,7 @@ input UpdatePostInput {
     title: String
     authorId: ID
 }
+type Subscription {
+    personAdded: Person
+}
 `
