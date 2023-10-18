@@ -66,3 +66,13 @@ The response of the delete mutation is the persons not deleted. And it correctly
 
 => let's delete the first post
 ![delete first post](image-15.png)
+
+- Subscriptions - addPeople
+
+![addPeople example w/ subscriptions](image-16.png)
+
+=> only one tab has a subscription opened
+![subscriptions are related to client's instances](image-17.png)
+
+=> add a new person on the other tab is still shown on the subscription
+![add new person from other tab - subscription result](image-18.png)
