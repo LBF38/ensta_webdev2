@@ -22,3 +22,10 @@ Add the possibility to get a post from id:
 - `PostTitleAuthorName`
 
 ![PostTitleAuthorName](image-4.png)
+
+- Add a mutation to add people
+
+![add mutation to add people](image-5.png)
+
+=> verified by making a query on `people`
+![check mutation result with query on people](image-6.png)
