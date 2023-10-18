@@ -49,9 +49,6 @@ export const resolvers = {
             return newPost;
         },
         modifyPost: (_, args) => {
-            // if (db.people.find(args.author_id) === undefined) {
-            //     db.posts = db.posts.filter((post) => post.id !== args.id);
-            // }
             console.log(args);
             db.posts = db.posts.map((post) => {
                 // ignore author_id if not in db.people
