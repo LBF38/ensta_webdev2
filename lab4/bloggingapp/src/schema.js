@@ -43,5 +43,7 @@ input UpdatePostInput {
 }
 type Subscription {
     personAdded: Person
+    postAdded: Post
+    postModified: Post
 }
 `
